@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+morange{
+    background-color: rgb(247, 205, 127);
+}
