@@ -31,9 +31,9 @@ export default function ItemViewer({products, name, search}) {
             </button>
             </div>: null}
             <h1 className="text-center text-5xl font-semibold p-20">{name}</h1>
-            <div className="flex flex-col lg:grid lg:grid-cols-3 lg:gap-x-16 lg:gap-y-16 text-black px-20 lg:px-72 mt-0">{products.map((product, key) => {
+            <div className="flex flex-col md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-x-16 md:gap-y-16 text-black px-20 lg:px-72 mt-0">{products.map((product, key) => {
                 return (
-                    <a href={`/products/${product.slug}`} key={key} className='mb-20 lg:mb-0'>
+                    <a href={`/products/${product.slug}`} key={key} className='mb-20 md:mb-0'>
                     <div> 
                         <Image src={product.imageSrc} height='100' width= 'full'/>
                         <div className="w-full flex flex-row">

@@ -6,7 +6,7 @@ import shoprecent from '../assets/recent.jpg';
 
 export default function CollectionsHeader() {
   return (
-    <div className="bg-blue-200 w-full py-20 px-32 lg:px-20 grid-cols-2 lg:flex lg:flex-row">
+    <div className="bg-blue-200 w-full py-20 px-32 lg:px-20 md:grid md:grid-cols-2 md:gap-x-5 lg:flex lg:flex-row">
       <CollectionItem src={shoprecent} info='New Arrivals'/>
       <CollectionItem src={shopseating} info='Chairs, Couches & Seating'/>
       <CollectionItem src={shoptables} info='Tables, Dressers & Drawers'/>

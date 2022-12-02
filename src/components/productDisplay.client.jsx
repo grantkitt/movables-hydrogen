@@ -9,7 +9,7 @@ export default function ProductDisplay({product, products}) {
   return (
     <div className="bg-blue-100">
     <div className="pt-10 lg:p-10 flex flex-col xl:flex-row mx-14 lg:mx-52">
-        <div className="grid grid-cols-3 gap-x-10 lg:flex xl:flex-col lg:mr-10 mx-10">
+        <div className="grid grid-cols-3 gap-x-10 lg:flex xl:flex-col lg:mr-10 mx-auto">
         {product?.images.map((image, index) => {
             return (
                 <Image key={index} src={image.src} height='100' width='110' className="rounded-2xl mb-5" alt="Vintage Furnature" onClick={e => change(e, image.src)} style={{border: (image.src === theImg) ? 'solid 3px black': '' }} />
