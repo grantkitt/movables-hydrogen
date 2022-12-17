@@ -6,7 +6,7 @@ export default function FancyBrands() {
     <div className="relative bg-blue-200">
       <Image src={'https://i.imgur.com/QA5cCYy.jpg'} width='full' height='100' alt='fancy brands'/>
       <div className='relative md:absolute md:top-40 lg:top-20 md:w-full lg:w-1/3 text-left px-20 md:pt-10 text-2xl md:text-5xl italic text-black font-bold  '>
-        <h1 className='p-3 bg-white bg-opacity-75 w-80 mx-auto md:mx-0 md:w-full lg:w-80 text-center md:text-left rounded-2xl'>Brands for expensive and vintage tastes.</h1>
+        <h1 className='p-3 bg-white bg-opacity-75 mx-auto md:mx-0 w-full lg:w-80 text-center md:text-left rounded-2xl'>Brands for expensive and vintage tastes.</h1>
       </div>
     
       <div className='w-full flex flex-col lg:flex-row md:mt-0 p-20 lg:justify-center lg:items-center'>
