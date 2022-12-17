@@ -50,7 +50,7 @@ export function Layout({ children }) {
 }
 const MenuScreen = () => {
   return (
-    <div className='absolute top-20 right-0 flex flex-row bg-white justify-center gap-4 w-full text-black font-semibold text-lg p-4 drop-shadow-2xl'>
+    <div className='absolute top-16 right-0 flex flex-row bg-white justify-center gap-4 w-full text-black font-semibold text-md p-4 drop-shadow-2xl'>
       <h1>New Arrivals</h1>
       <h1>Featured</h1>
       <a href="/catalog"><h1>Catalog</h1></a>

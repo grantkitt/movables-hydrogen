@@ -23,7 +23,7 @@ export default function ItemViewer({products, name, search}) {
     }
     return (
         <div className="bg-blue-100 h-full">
-            {search ? <div className="fixed w-full flex justify-center"><input type='text' onKeyDown={e => onEnter(e)} onChange={e => handleChange(e)} placeholder="search for items, designers, categories, etc" className="border-black border-2 rounded-lg w-96 lg:w-1/3 px-3 lg:py-3 mt-5 drop-shadow-2xl"/> 
+            {search ? <div className="fixed w-full flex justify-center"><input type='text' onKeyDown={e => onEnter(e)} onChange={e => handleChange(e)} placeholder="search for items, designers, etc" className="border-black border-2 rounded-lg w-80 lg:w-1/3 px-3 lg:py-3 mt-5 drop-shadow-2xl"/> 
             <button onClick={e => onSearch(e)}>
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-10 h-10 mt-6 ml-2 p-2 rounded-full bg-blue-300 drop-shadow-2xl">
             <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
