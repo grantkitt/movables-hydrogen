@@ -34,7 +34,7 @@ export default function QueryClient() {
             {(query) ? 
             <div className="w-full flex flex-row items-center justify-center">
             <div className="w-3/4 lg:w-1/3 items-center">
-                <div className="flex flex-row gap-10 mt-10 mb-3">
+                <div className="flex flex-col md:flex-row gap-8 md:gap-10 mt-10 mb-3">
                 <input type="text" onChange={e => changeEmail(e)} placeholder="Enter email address" className="border-2 rounded-xl border-black p-3 w-full" />
                 <input type="text" onChange={e => changeName(e)} placeholder="Enter first and last name" className="border-2 rounded-xl border-black p-3 w-full" />
                 </div>
