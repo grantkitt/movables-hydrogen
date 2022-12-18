@@ -18,6 +18,7 @@ export default function Product() {
     })
     const product = {
         id: data.productByHandle.id,
+        variantid: data.productByHandle.variants.edges[0].node.id,
         handle: handle,
         title: data.productByHandle.title,
         description: data.productByHandle.description,
@@ -60,6 +61,7 @@ query getProductIdFromHandle($handle: String!) {
       variants(first: 1) {
         edges {
           node {
+            id
             quantityAvailable
             priceV2 {
               amount

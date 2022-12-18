@@ -38,7 +38,7 @@ export default function ItemViewer({products, name, search}) {
                         <Image src={product.imageSrc} height='100' width= 'full'/>
                         <div className="w-full flex flex-row">
                         <h1 className="text-2xl text-medium">{product.title}</h1>
-                        <h1 className="ml-auto text-gray-600 text-2xl font-semibold"></h1>
+                        <h1 className="ml-auto text-gray-600 text-2xl font-semibold">${product.price}</h1>
                         </div>
                     </div>
                     </a>

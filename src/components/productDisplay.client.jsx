@@ -1,4 +1,12 @@
-import { Image } from "@shopify/hydrogen";
+import {
+    Image,
+    ProductOptionsProvider,
+    MediaFile,
+    useProductOptions,
+    ProductPrice,
+    BuyNowButton,
+    AddToCartButton,
+  } from "@shopify/hydrogen";
 import { useState } from "react";
 import ItemViewer from "./ItemViewer.client";
 export default function ProductDisplay({product, products}) {
@@ -23,13 +31,33 @@ export default function ProductDisplay({product, products}) {
             <div className="px-3 md:px-52 lg:px-20 xl:px-10 mt-10 xl:mt-0" >
                 <div className="mb-5 flex" >
                     <h1 className="text-center text-black font-bold text-2xl mt-3 lg:mt-0 lg:text-5xl">{product?.title}</h1>
-                    <h2 className="text-gray-800 text-3xl font-medium mt-3 ml-auto"></h2>
+                    <h2 className="text-gray-800 text-3xl font-medium mt-3 ml-auto">${product.price}</h2>
                 </div>
                 <p className="text-justify font-semibold text-gray-600 text-xl">{product?.description}</p>
                 <div className="mt-5 text-center justify-start">
                     <h3 className='text-red-600 font-semibold w-20 mx-auto'>1 in stock</h3>
                     <a href={`/query?variable=${product.handle}`}><h4 className="p-1 mx-auto border-4 border-black text-xl font-semibold bg-white mt-1 cursor-pointer w-60 md:w-96" >Get a quote</h4></a>
                     {/* <h4 className="p-1 mx-auto bg-black text-white text-xl font-semibold mt-2 border-4 border-black cursor-pointer w-60 md:w-96">Buy Now</h4>  */}
+                    <ProductOptionsProvider data={product}>
+                    <div className="w-60 md:w-96 flex flex-col mx-auto">
+                    <AddToCartButton
+                        type="button"
+                        variantId={product.variantid}
+                        quantity={1}
+                        accessibleAddingToCartLabel="Adding item to your cart"
+                        
+                    >
+                        <span className="bg-black text-white inline-block rounded-sm text-xl font-medium text-center py-2 px-6 max-w-xl leading-none w-full mt-4 border-gray-700 border-4">
+                        {"Add to cart"}
+                        </span>
+                    </AddToCartButton>
+                    <BuyNowButton variantId={product.variantid}>
+                    <span className="inline-block rounded-sm font-medium text-center text-xl py-2 px-6 max-w-xl leading-none border-4 border-gray-900 bg-gray-400 w-full mt-4">
+                        Buy it now 
+                    </span>
+                    </BuyNowButton>
+                    </div>
+                    </ProductOptionsProvider>
                 </div>
             </div>
 
