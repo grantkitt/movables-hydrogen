@@ -38,7 +38,7 @@ export default function ProductDisplay({product, products}) {
                     <h3 className='text-red-600 font-semibold w-20 mx-auto'>1 in stock</h3>
                     <a href={`/query?variable=${product.handle}`}><h4 className="p-1 mx-auto border-4 border-black text-xl font-semibold bg-white mt-1 cursor-pointer w-60 md:w-96" >Get a quote</h4></a>
                     {/* <h4 className="p-1 mx-auto bg-black text-white text-xl font-semibold mt-2 border-4 border-black cursor-pointer w-60 md:w-96">Buy Now</h4>  */}
-                    <ProductOptionsProvider data={product}>
+                    {/* <ProductOptionsProvider data={product}>
                     <div className="w-60 md:w-96 flex flex-col mx-auto">
                     <AddToCartButton
                         type="button"
@@ -57,7 +57,7 @@ export default function ProductDisplay({product, products}) {
                     </span>
                     </BuyNowButton>
                     </div>
-                    </ProductOptionsProvider>
+                    </ProductOptionsProvider> */}
                 </div>
             </div>
 
