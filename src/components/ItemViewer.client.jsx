@@ -30,15 +30,15 @@ export default function ItemViewer({products, name, search}) {
             </svg>
             </button>
             </div>: null}
-            <h1 className="text-center text-5xl font-semibold p-20">{name}</h1>
+            <h1 className="text-center text-5xl font-semibold pt-24 pb-20">{name}</h1>
             <div className="flex flex-col md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-x-16 md:gap-y-16 text-black px-20 lg:px-72 mt-0">{products.map((product, key) => {
                 return (
                     <a href={`/products/${product.slug}`} key={key} className='mb-20 md:mb-0'>
                     <div> 
                         <Image src={product.imageSrc} height='100' width= 'full'/>
-                        <div className="w-full flex flex-row">
-                        <h1 className="text-lg md:text-2xl font-medium mr-2 md:mr-0">{product.title}</h1>
-                        <h1 className="ml-auto text-gray-600 text-2xl font-semibold">${product.price}</h1>
+                        <div className="w-full flex flex-col">
+                        <h1 className="text-lg md:text-2xl font-medium">{product.title}</h1>
+                        <h1 className="text-blue-400 text-2xl font-medium">${product.price}</h1>
                         </div>
                     </div>
                     </a>
