@@ -16,11 +16,11 @@ export default function ProductDisplay({product, products}) {
     }
   return (
     <div className="bg-blue-100">
-    <div className="pt-10 lg:p-10 flex flex-col xl:flex-row mx-10 lg:mx-52">
-        <div className="grid grid-cols-3 gap-x-10 lg:flex xl:flex-col lg:mr-10 mx-auto">
+    <div className="pt-10 lg:p-10 flex flex-col xl:flex-row mx-10 lg:mx-48">
+        <div className="grid grid-cols-3 gap-x-10 xl:flex xl:flex-col lg:mr-10 mx-auto">
         {product?.images.map((image, index) => {
             return (
-                <Image key={index} src={image.src} height='100' width='110' className="rounded-2xl mb-5" alt="Vintage Furnature" onClick={e => change(e, image.src)} style={{border: (image.src === theImg) ? 'solid 3px black': '' }} />
+                <Image key={index} src={image.src} height='100' width='100' className="rounded-2xl mb-5 w-60" alt="Vintage Furnature" onClick={e => change(e, image.src)} style={{border: (image.src === theImg) ? 'solid 3px black': '' }} />
             )
         })}
         </div>
@@ -30,7 +30,7 @@ export default function ProductDisplay({product, products}) {
             <Image src={theImg} height='100' width='600' className="rounded-xl border-4 border-black"/>
             <div className="px-3 md:px-52 lg:px-20 xl:px-10 mt-10 xl:mt-0" >
                 <div className="mb-5 flex" >
-                    <h1 className="text-left md:text-center text-black font-bold text-lg md:text-2xl mt-3 lg:mt-0 lg:text-5xl">{product?.title}</h1>
+                    <h1 className="text-left md:text-center text-black font-bold text-lg md:text-2xl mt-3 lg:mr-5 lg:mt-0 lg:text-3xl">{product?.title}</h1>
                     <h2 className="text-gray-800 text-3xl font-medium mt-3 ml-auto">${product.price}</h2>
                 </div>
                 <p className="text-left md:text-justify font-semibold text-gray-600 text-xl">{product?.description}</p>

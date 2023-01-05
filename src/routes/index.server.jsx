@@ -1,7 +1,7 @@
 import { Layout } from '../components/Layout.client'
 import Header from '../components/Header';
 import CollectionsHeader from '../components/CollectionsHeader';
-import EmailSection from '../components/emailSection';
+import EmailSection from '../components/emailSection.client';
 import FancyBrands from '../components/FancyBrands';
 import Footer from '../components/Footer';
 

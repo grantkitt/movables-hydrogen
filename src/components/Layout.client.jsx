@@ -37,7 +37,7 @@ export function Layout({ children }) {
               <h1>New Arrivals</h1>
               <h1>Featured</h1>
               <a href="/catalog"><h1>Catalog</h1></a>
-              <h1>Contact</h1>
+              <a href="/query"><h1>Contact</h1></a>
               <h1>About</h1>
               <button onClick={openDrawer} >
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-8 h-8">
@@ -72,7 +72,7 @@ const MenuScreen = () => {
       <h1>New Arrivals</h1>
       <h1>Featured</h1>
       <a href="/catalog"><h1>Catalog</h1></a>
-      <h1>Contact</h1>
+      <a href="/query"><h1>Contact</h1></a>
       <h1>About</h1>
       
     </div>
