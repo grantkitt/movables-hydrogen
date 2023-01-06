@@ -43,6 +43,7 @@ import {
           </h2>
           <OrderSummary />
           <CartCheckoutActions />
+          <div className="h-20 md:h-0"></div>
         </section>
       </form>
     );
@@ -50,7 +51,7 @@ import {
 
   export function CartEmpty({ onClose }) {
     return (
-      <div className="flex flex-col space-y-7 justify-center items-center md:py-8 md:px-12 px-4 py-6 h-screen">
+      <div className="flex flex-col space-y-7 justify-center items-center md:py-8 md:px-12 px-4 pb-40 h-screen">
         <h2 className="whitespace-pre-wrap max-w-prose font-bold text-4xl">
           Your cart is empty
         </h2>
