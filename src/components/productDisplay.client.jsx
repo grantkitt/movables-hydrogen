@@ -29,11 +29,11 @@ export default function ProductDisplay({product, products}) {
         <div className="flex flex-col xl:flex-row justify-start">
             <Image src={theImg} height='100' width='600' className="rounded-xl border-4 border-black"/>
             <div className="px-3 md:px-52 lg:px-20 xl:px-10 mt-10 xl:mt-0" >
-                <div className="mb-5 md:flex" >
-                    <h1 className="text-left md:text-center text-black font-bold text-lg md:text-2xl mt-3 lg:mr-5 lg:mt-0 lg:text-3xl">{product?.title}</h1>
-                    <h2 className="text-gray-800 text-xl md:text-3xl font-medium text-right md:text-center">${product.price}</h2>
+                <div className="mb-5 flex flex-col-reverse md:flex-row" >
+                    <h1 className="text-left md:text-center text-black font-bold text-lg md:text-2xl mt-0 lg:mr-5 lg:mt-0 lg:text-3xl">{product?.title}</h1>
+                    <h2 className="text-gray-800 text-xl md:text-3xl font-medium text-left md:text-center">${product.price}</h2>
                 </div>
-                <p className="text-left md:leading-10 font-semibold text-gray-600 text-2xl">{product?.description}</p>
+                <p className="text-left md:leading-10 font-semibold text-gray-600 text-xl leading-10 md:text-2xl">{product?.description}</p>
                 <div className="mt-5 text-center justify-start">
                     <h3 className='text-red-600 font-semibold w-20 mx-auto'>{product.stock} in stock</h3>
                     <a href={`/query?variable=${product.handle}`}><h4 className="p-1 mx-auto border-4 border-black text-xl font-semibold bg-white mt-1 cursor-pointer w-60 md:w-96" >Request information</h4></a>

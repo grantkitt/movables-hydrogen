@@ -22,7 +22,7 @@ export default function Product() {
         handle: handle,
         title: data.productByHandle.title,
         description: data.productByHandle.description,
-        price: data.productByHandle.variants.edges[0].node.priceV2.amount,
+        price: parseInt(data.productByHandle.variants.edges[0].node.priceV2.amount, 0),
         images: productImages,
         stock: data.productByHandle.variants.edges[0].node.quantityAvailable
     }
@@ -42,7 +42,7 @@ export default function Product() {
         description: node.description,
         imageSrc: node.images.edges[0].node.src,
         imageAlt: node.title,
-        price: node.variants.edges[0].node.priceV2.amount,
+        price: parseInt(node.variants.edges[0].node.priceV2.amount, 0),
         slug: node.handle,
       }
     }).filter(Boolean)

@@ -20,13 +20,14 @@ export default function QueryClient() {
 
     function sendEmail(e) {
         e.preventDefault();
-      
+        
         emailjs.sendForm(serviceKey, templateKey, e.target, apiKey)
           .then((result) => {
               console.log(result.text);
           }, (error) => {
               console.log(error.text);
           });
+          form.current.reset();
       }
 
     return (
@@ -35,7 +36,7 @@ export default function QueryClient() {
             <form ref={form} onSubmit={sendEmail}>
             <div className="w-full flex flex-row items-center justify-center">
             <div className="w-3/4 lg:w-1/3 items-center">
-                <div className="flex flex-col md:flex-row gap-8 md:gap-10 mt-10 mb-5">
+                <div className="flex flex-col md:flex-row gap-5 md:gap-10 mt-10 mb-5">
                 <label className="font-semibold ml-1">
                 Your email
                 <input type="text" name='user_email' placeholder="Enter email address" className="border-2 rounded-xl border-black p-3 w-full" />
