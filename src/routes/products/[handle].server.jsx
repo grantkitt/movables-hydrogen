@@ -23,7 +23,8 @@ export default function Product() {
         title: data.productByHandle.title,
         description: data.productByHandle.description,
         price: data.productByHandle.variants.edges[0].node.priceV2.amount,
-        images: productImages
+        images: productImages,
+        stock: data.productByHandle.variants.edges[0].node.quantityAvailable
     }
     // const {datad} = useShopQuery({
     //   query: QUERYD, 

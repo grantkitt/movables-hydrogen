@@ -20,7 +20,7 @@ export default function ProductDisplay({product, products}) {
         <div className="grid grid-cols-3 gap-x-10 xl:flex xl:flex-col lg:mr-10 mx-auto">
         {product?.images.map((image, index) => {
             return (
-                <Image key={index} src={image.src} height='100' width='100' className="rounded-2xl mb-5 w-60" alt="Vintage Furnature" onClick={e => change(e, image.src)} style={{border: (image.src === theImg) ? 'solid 3px black': '' }} />
+                <Image key={index} src={image.src} height='100' width='100' className="rounded-2xl mb-5 md:w-60" alt="Vintage Furnature" onClick={e => change(e, image.src)} style={{border: (image.src === theImg) ? 'solid 3px black': '' }} />
             )
         })}
         </div>
@@ -29,17 +29,23 @@ export default function ProductDisplay({product, products}) {
         <div className="flex flex-col xl:flex-row justify-start">
             <Image src={theImg} height='100' width='600' className="rounded-xl border-4 border-black"/>
             <div className="px-3 md:px-52 lg:px-20 xl:px-10 mt-10 xl:mt-0" >
-                <div className="mb-5 flex" >
+                <div className="mb-5 md:flex" >
                     <h1 className="text-left md:text-center text-black font-bold text-lg md:text-2xl mt-3 lg:mr-5 lg:mt-0 lg:text-3xl">{product?.title}</h1>
-                    <h2 className="text-gray-800 text-3xl font-medium mt-3 ml-auto">${product.price}</h2>
+                    <h2 className="text-gray-800 text-xl md:text-3xl font-medium text-right md:text-center">${product.price}</h2>
                 </div>
-                <p className="text-left md:text-justify font-semibold text-gray-600 text-xl">{product?.description}</p>
+                <p className="text-left md:leading-10 font-semibold text-gray-600 text-2xl">{product?.description}</p>
                 <div className="mt-5 text-center justify-start">
-                    <h3 className='text-red-600 font-semibold w-20 mx-auto'>1 in stock</h3>
-                    <a href={`/query?variable=${product.handle}`}><h4 className="p-1 mx-auto border-4 border-black text-xl font-semibold bg-white mt-1 cursor-pointer w-60 md:w-96" >Get a quote</h4></a>
+                    <h3 className='text-red-600 font-semibold w-20 mx-auto'>{product.stock} in stock</h3>
+                    <a href={`/query?variable=${product.handle}`}><h4 className="p-1 mx-auto border-4 border-black text-xl font-semibold bg-white mt-1 cursor-pointer w-60 md:w-96" >Request information</h4></a>
                     {/* <h4 className="p-1 mx-auto bg-black text-white text-xl font-semibold mt-2 border-4 border-black cursor-pointer w-60 md:w-96">Buy Now</h4>  */}
-                    {/* <ProductOptionsProvider data={product}>
-                    <div className="w-60 md:w-96 flex flex-col mx-auto">
+                    <ProductOptionsProvider data={product}>
+                    {(product.stock) ? <div className="w-60 md:w-96 flex flex-col mx-auto">
+                    <BuyNowButton variantId={product.variantid}>
+                    <span className="inline-block rounded-sm font-medium text-center text-xl py-2 px-6 max-w-xl leading-none border-4 border-black bg-black text-white w-full mt-4">
+                        Buy it now 
+                    </span>
+                    </BuyNowButton> 
+                    
                     <AddToCartButton
                         type="button"
                         variantId={product.variantid}
@@ -47,17 +53,13 @@ export default function ProductDisplay({product, products}) {
                         accessibleAddingToCartLabel="Adding item to your cart"
                         
                     >
-                        <span className="bg-black text-white inline-block rounded-sm text-xl font-medium text-center py-2 px-6 max-w-xl leading-none w-full mt-4 border-gray-700 border-4">
+                        <span className="bg-gray-400 text-black inline-block rounded-sm text-xl font-medium text-center py-2 px-6 max-w-xl leading-none w-full mt-4 border-black border-4">
                         {"Add to cart"}
                         </span>
                     </AddToCartButton>
-                    <BuyNowButton variantId={product.variantid}>
-                    <span className="inline-block rounded-sm font-medium text-center text-xl py-2 px-6 max-w-xl leading-none border-4 border-gray-900 bg-gray-400 w-full mt-4">
-                        Buy it now 
-                    </span>
-                    </BuyNowButton>
-                    </div>
-                    </ProductOptionsProvider> */}
+                    
+                    </div> : null}
+                    </ProductOptionsProvider>
                 </div>
             </div>
 
