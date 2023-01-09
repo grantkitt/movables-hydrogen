@@ -11,14 +11,14 @@ export default function FancyBrands() {
     
       <div className='w-full flex flex-col lg:flex-row md:mt-0 p-20 lg:justify-center lg:items-center'>
         <Image src={'https://i.imgur.com/8m5iet0.jpg'} height='100' width='350' className='rounded-2xl drop-shadow-2xl mx-auto lg:mx-0'/>
-      <div className='w-full lg:w-1/4 text-center py-20 text-2xl lg:text-5xl italic text-black font-medium'>
+      <div className='w-full lg:w-3/4 text-center py-20 text-2xl lg:text-5xl italic text-black font-medium'>
         <h1 className='text-3xl font-normal not-italic mb-5'>Explore designers like...</h1>
       <h1 className='mb-5'>Percival Lafer</h1>
       <h1 className='mb-5'>Adrian Pearsall</h1>
       <h1 className='mb-5'>Arne Jacobson</h1>
       <h1 className='mb-7'>Ligne Roset</h1>
       <a href="/catalog">
-        <h2 className='p-5 rounded-xl drop-shadow-2xl bg-blue-200 text-black text-xl lg:text-2xl w-52 mx-auto text-center lg:w-60 lg:ml-24'>
+        <h2 className='p-5 rounded-xl drop-shadow-2xl bg-blue-200 text-black text-xl lg:text-2xl text-center lg:w-60 mx-auto'>
         Explore Movables
         </h2>
       </a>

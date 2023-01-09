@@ -32,7 +32,7 @@ export default function ItemViewer({products, name, search}) {
             </div>: null}
             {search ? <h1 className="text-center text-5xl font-semibold pt-32 pb-20">{name}</h1> : 
             <h1 className="text-center text-5xl font-semibold pt-24 pb-20">{name}</h1>}
-            {(products.length) ? <div className="flex flex-col md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-x-16 md:gap-y-16 text-black px-20 lg:px-72 mt-0">{products.map((product, key) => {
+            {(products.length) ? <div className="flex flex-col md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-x-16 md:gap-y-16 text-black mx-auto w-3/4 mt-0">{products.map((product, key) => {
                 return (
                     <a href={`/products/${product.slug}`} key={key} className='mb-20 md:mb-0'>
                     <div> 

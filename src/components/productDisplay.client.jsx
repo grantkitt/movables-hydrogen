@@ -15,31 +15,33 @@ export default function ProductDisplay({product, products}) {
         setImg(item);
     }
   return (
-    <div className="bg-blue-100">
-    <div className="pt-10 lg:p-10 flex flex-col xl:flex-row mx-10 lg:mx-48">
-        <div className="grid grid-cols-3 gap-x-10 xl:flex xl:flex-col lg:mr-10 mx-auto">
-        {product?.images.map((image, index) => {
+    <div className="bg-blue-100 pt-10">
+    <div className="w-5/6 md:w-full md:px-16 mx-auto">
+        <div className="flex flex-row justify-center">
+        <h1 className="text-center xl:hidden font-semibold text-2xl mr-5">{product.title}</h1>
+        <h1 className="text-center xl:hidden font-semibold text-2xl text-blue-400">${product.price}</h1>
+
+        </div>  
+        <div className="xl:flex">
+        <div className="lg:flex lg:flex-row lg:justify-center xl:justify-end xl:flex-row-reverse">
+        <img className='w-5/6 lg:w-1/3 mx-auto lg:mx-5 mt-5 border-black border-4 rounded-2xl' src={theImg} alt='the selected photo'></img>
+        <div className="flex flex-row lg:grid lg:grid-cols-1 justify-center mx-auto lg:mx-5 w-full lg:w-16 lg:h-96 mt-5">
+        {product.images.map((image, key) => {
             return (
-                <Image key={index} src={image.src} height='100' width='100' className="rounded-2xl mb-5 md:w-60" alt="Vintage Furnature" onClick={e => change(e, image.src)} style={{border: (image.src === theImg) ? 'solid 3px black': '' }} />
+            <img onClick={e => change(e, image.src)} key={key} src={image.src} alt={image.alt} className='w-16 mx-2 lg:my-2 rounded-xl' style={{border: (image.src === theImg) ? 'solid 3px black': '' }}/>
             )
         })}
         </div>
-        
-        <div className="blocks">
-        <div className="flex flex-col xl:flex-row justify-start">
-            <Image src={theImg} height='100' width='600' className="rounded-xl border-4 border-black"/>
-            <div className="px-3 md:px-52 lg:px-20 xl:px-10 mt-10 xl:mt-0" >
-                <div className="mb-5 flex flex-col-reverse md:flex-row" >
-                    <h1 className="text-left text-black font-bold text-lg md:text-2xl mt-0 lg:mr-5 lg:mt-0 lg:text-3xl">{product?.title}</h1>
-                    <h2 className="text-gray-800 text-xl md:text-3xl font-medium text-left md:text-center">${product.price}</h2>
-                </div>
-                <p className="text-left md:leading-10 font-semibold text-gray-600 text-xl leading-10 md:text-2xl">{product?.description}</p>
-                <div className="mt-5 text-center justify-start">
+        </div>
+        <div className="flex flex-col md:flex-row md:justify-center xl:flex-col">
+        div
+        <p className="leading-8 text-xl text-justify text-gray-500 mt-5 md:w-1/2 md:mr-10 xl:w-full">{product.description}</p>
+        <div className="mt-5 text-center justify-start">
                     <h3 className='text-red-600 font-semibold w-20 mx-auto'>{product.stock} in stock</h3>
-                    <a href={`/query?variable=${product.handle}`}><h4 className="p-1 mx-auto border-4 border-black text-xl font-semibold bg-white mt-1 cursor-pointer w-60 md:w-96" >Request information</h4></a>
+                    <a href={`/query?variable=${product.handle}`}><h4 className="p-1 md:w-60 mx-auto border-4 border-black text-xl font-semibold bg-white mt-1 cursor-pointer" >Request information</h4></a>
                     {/* <h4 className="p-1 mx-auto bg-black text-white text-xl font-semibold mt-2 border-4 border-black cursor-pointer w-60 md:w-96">Buy Now</h4>  */}
                     <ProductOptionsProvider data={product}>
-                    {(product.stock) ? <div className="w-60 md:w-96 flex flex-col mx-auto">
+                    {(product.stock) ? <div className="flex flex-col mx-auto md:w-60">
                     <BuyNowButton variantId={product.variantid}>
                     <span className="inline-block rounded-sm font-medium text-center text-xl py-2 px-6 max-w-xl leading-none border-4 border-black bg-black text-white w-full mt-4">
                         Buy it now 
@@ -61,10 +63,9 @@ export default function ProductDisplay({product, products}) {
                     </div> : null}
                     </ProductOptionsProvider>
                 </div>
-            </div>
-
-        </div>
-        <div className="px-3 lg:px-0 mt-16">
+                </div>
+                </div>
+                <div className="px-3 lg:px-0 mt-16">
             <div className="mt-10 p-5 py-5 bg-orange-200 rounded-xl" >
             <div className="flex flex-row">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-8 h-8">
@@ -88,7 +89,7 @@ export default function ProductDisplay({product, products}) {
             <p className="font-medium mt-5">We do not allow returns in any regard. The pictures will show any defects, or issues with the item being sold. Additional information avaiable upon request.</p>
             </div>
         </div>
-        </div>
+
     </div>
     <ItemViewer name={"Continue exploring"} products={products} search={false}/>
     </div>
