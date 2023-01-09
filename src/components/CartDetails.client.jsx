@@ -126,11 +126,11 @@ import {
             </h3>
   
             <div className="flex flex-col justify-start mt-2">
-              {(merchandise?.selectedOptions || []).map((option) => (
+              {/* {(merchandise?.selectedOptions || []).map((option) => (
                 <span key={option.name} className="last:mb-4 text-gray-500">
                   {option.name}: {option.value}
                 </span>
-              ))}
+              ))} */}
             </div>
   
             <div className="flex items-center gap-2 mt-auto">

@@ -34,8 +34,8 @@ export function Layout({ children }) {
               Movables<h3 className="text-blue-200">ATX</h3>
             </div></a>
             <div className="absolute text-black text-2xl font-semibold text-left lg:flex flex-row justify-center items-center gap-10 right-10 hidden">
-              <h1>New Arrivals</h1>
-              <h1>Featured</h1>
+              <a href="/collections/new-arrivals"><h1>New Arrivals</h1></a>
+              {/* <h1>Featured</h1> */}
               <a href="/catalog"><h1>Catalog</h1></a>
               <a href="/query"><h1>Contact</h1></a>
               <h1>About</h1>
@@ -69,8 +69,8 @@ export function Layout({ children }) {
 const MenuScreen = () => {
   return (
     <div className='absolute top-16 right-0 flex flex-row bg-white justify-center gap-4 w-full text-black font-semibold text-sm p-4 drop-shadow-2xl'>
-      <h1>New Arrivals</h1>
-      <h1>Featured</h1>
+      <a href="/collections/new-arrivals"><h1>New Arrivals</h1></a>
+      {/* <h1>Featured</h1> */}
       <a href="/catalog"><h1>Catalog</h1></a>
       <a href="/query"><h1>Contact</h1></a>
       <h1>About</h1>

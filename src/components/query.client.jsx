@@ -31,7 +31,7 @@ export default function QueryClient() {
       }
 
     return (
-        <div>
+        <div className="h-screen">
             
             <form ref={form} onSubmit={sendEmail}>
             <div className="w-full flex flex-row items-center justify-center">

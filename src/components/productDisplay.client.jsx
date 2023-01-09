@@ -30,7 +30,7 @@ export default function ProductDisplay({product, products}) {
             <Image src={theImg} height='100' width='600' className="rounded-xl border-4 border-black"/>
             <div className="px-3 md:px-52 lg:px-20 xl:px-10 mt-10 xl:mt-0" >
                 <div className="mb-5 flex flex-col-reverse md:flex-row" >
-                    <h1 className="text-left md:text-center text-black font-bold text-lg md:text-2xl mt-0 lg:mr-5 lg:mt-0 lg:text-3xl">{product?.title}</h1>
+                    <h1 className="text-left text-black font-bold text-lg md:text-2xl mt-0 lg:mr-5 lg:mt-0 lg:text-3xl">{product?.title}</h1>
                     <h2 className="text-gray-800 text-xl md:text-3xl font-medium text-left md:text-center">${product.price}</h2>
                 </div>
                 <p className="text-left md:leading-10 font-semibold text-gray-600 text-xl leading-10 md:text-2xl">{product?.description}</p>

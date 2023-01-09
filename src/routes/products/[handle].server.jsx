@@ -101,16 +101,6 @@ query getProductIdFromHandle($handle: String!) {
               }
             }
           }
-          priceRange {
-            maxVariantPrice {
-              amount
-              currencyCode
-            }
-            minVariantPrice {
-              amount
-              currencyCode
-            }
-          }
           images(first: 6) {
             edges {
               node {
