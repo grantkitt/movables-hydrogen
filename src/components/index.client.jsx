@@ -12,24 +12,18 @@ export default function Index() {
     useEffect(() => {
         setTimeout(() => {
           setIsLoading(false);
-        }, 500);
+        }, 50);
       }, []);
-    
-    if (isLoading) return (
-        <div>
-            <Layout>
-                <div className='h-screen bg-blue-100'>
-                </div>
-            </Layout>
-        </div>
-    )
   return (
     <Layout>
+      <div className='relative w-full h-screen'>
     <Header/>
     <CollectionsHeader/>
     <EmailSection/>
     <FancyBrands/>
     <Footer/>
+    <div className='absolute top-0 left-0 w-full h-screen bg-blue-100' style={{visibility: (isLoading) ? '' :'hidden'}}></div>
+    </div>
     </Layout>
   );
 }
