@@ -36,7 +36,7 @@ export default function QueryClient() {
             <form ref={form} onSubmit={sendEmail}>
             <div className="w-full flex flex-row items-center justify-center">
             <div className="w-5/6 lg:w-2/3 xl:w-1/3 items-center">
-                <div className="flex flex-col md:flex-row mt-10 mb-5 w-full md:gap-10">
+                <div className="flex flex-col md:flex-row mt-10 mb-5 w-full gap-5 md:gap-10">
                 <label className="font-semibold ml-1">
                 Your email
                 <input type="text" name='user_email' placeholder="Enter email address" className="border-2 rounded-xl border-black p-3 w-full" />
