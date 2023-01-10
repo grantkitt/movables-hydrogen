@@ -26,7 +26,7 @@ export default function ItemViewer({products, name, search}) {
     useEffect(() => {
         setTimeout(() => {
           setIsLoading(false);
-        }, 100);
+        }, 500);
       }, []);
     
     if (isLoading) return (
