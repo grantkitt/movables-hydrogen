@@ -1,8 +1,9 @@
 import { Image} from "@shopify/hydrogen"
-import { useState } from "react";
+import { useState, useEffect } from "react";
 export default function ItemViewer({products, name, search}) {
     const [message, setMessage] = useState('');
-    const [params, setParams] = useState('');   
+    const [params, setParams] = useState(''); 
+    const [isLoading, setIsLoading] = useState(true)  
     const onSearch = (e) => {
         setParams(message)
     }
@@ -21,6 +22,20 @@ export default function ItemViewer({products, name, search}) {
             return name2.includes(params.toLowerCase())
         })
     }
+
+    useEffect(() => {
+        setTimeout(() => {
+          setIsLoading(false);
+        }, 50);
+      }, []);
+    
+    if (isLoading) return (
+        <div>
+                <div className='h-screen bg-blue-100'>
+                </div>
+        </div>
+    )
+
     return (
         <div className="bg-blue-100 h-full">
             {search ? <div className="fixed w-full flex justify-center"><input type='text' onKeyDown={e => onEnter(e)} onChange={e => handleChange(e)} placeholder="search for items, designers, etc" className="border-black border-2 rounded-lg w-72 lg:w-1/3 px-3 lg:py-3 mt-5 drop-shadow-2xl"/> 

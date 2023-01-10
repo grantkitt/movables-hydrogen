@@ -7,13 +7,28 @@ import {
     BuyNowButton,
     AddToCartButton,
   } from "@shopify/hydrogen";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ItemViewer from "./ItemViewer.client";
 export default function ProductDisplay({product, products}) {
     const [theImg, setImg] = useState(product.images[0].src);
+    const [isLoading, setIsLoading] = useState(true)
     const change = (e, item) => {
         setImg(item);
     }
+
+    
+    useEffect(() => {
+        setTimeout(() => {
+          setIsLoading(false);
+        }, 50);
+      }, []);
+    
+    if (isLoading) return (
+        <div>
+                <div className='h-screen bg-blue-100'>
+                </div>
+        </div>
+    )
   return (
     <div className="bg-blue-100 pt-10 xl:px-40">
     <div className="w-5/6 md:w-full md:px-16 mx-auto">
