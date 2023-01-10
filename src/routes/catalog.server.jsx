@@ -19,7 +19,7 @@ export default function Catalog() {
           description: node.description,
           imageSrc: node.images.edges[0].node.src,
           imageAlt: node.title,
-          price: node.variants.edges[0].node.priceV2.amount,
+          price: parseInt(node.variants.edges[0].node.priceV2.amount, 0),
           slug: node.handle,
         }
       }).filter(Boolean)
