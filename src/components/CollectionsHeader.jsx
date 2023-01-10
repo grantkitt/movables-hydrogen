@@ -3,7 +3,7 @@ import { Image } from "@shopify/hydrogen";
 
 export default function CollectionsHeader() {
   return (
-    <div className="bg-blue-200 w-full py-20 px-20 md:grid md:grid-cols-2 md:gap-x-10 lg:flex lg:flex-row">
+    <div className="bg-blue-200 w-full py-20 px-20 md:grid md:grid-cols-2 md:gap-x-10 lg:flex lg:flex-row mx-auto">
       <CollectionItem src={'https://i.imgur.com/vdIuqc5.jpg'} info='New Arrivals' to='/collections/new-arrivals'/>
       <CollectionItem src={'https://i.imgur.com/fcQVKRx.jpg'} info='Chairs, Couches & Seating' to='/collections/chairs-couches-seating'/>
       <CollectionItem src={'https://i.imgur.com/4YODOVf.jpg'} info='Tables, Dressers & Drawers' to='/collections/tables-dressers-drawers'/>
