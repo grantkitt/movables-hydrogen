@@ -26,18 +26,12 @@ export default function ItemViewer({products, name, search}) {
     useEffect(() => {
         setTimeout(() => {
           setIsLoading(false);
-        }, 500);
+        }, 50);
       }, []);
     
-    if (isLoading) return (
-        <div>
-                <div className='h-screen bg-blue-100'>
-                </div>
-        </div>
-    )
 
     return (
-        <div className="bg-blue-100 h-full">
+        <div className="bg-blue-100 h-full relative">
             {search ? <div className="fixed w-full flex justify-center"><input type='text' onKeyDown={e => onEnter(e)} onChange={e => handleChange(e)} placeholder="search for items, designers, etc" className="border-black border-2 rounded-lg w-72 lg:w-1/3 px-3 lg:py-3 mt-5 drop-shadow-2xl"/> 
             <button onClick={e => onSearch(e)}>
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" className="w-10 h-10 mt-6 ml-2 p-2 rounded-full bg-blue-300 drop-shadow-2xl">
@@ -61,6 +55,7 @@ export default function ItemViewer({products, name, search}) {
                 )
             })}</div> : <div className="h-screen"><h1 className="text-center text-3xl font-semibold mt-20">No products available. <a  className='underline' href="/catalog">Back to catalog</a></h1></div>}
             <div className="h-10"></div>
+            <div className='absolute top-0 left-0 w-full h-screen bg-blue-100' style={{visibility: (isLoading) ? '' :'hidden'}}></div>
         </div>
     )
 }

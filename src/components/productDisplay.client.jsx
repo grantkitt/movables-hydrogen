@@ -20,17 +20,11 @@ export default function ProductDisplay({product, products}) {
     useEffect(() => {
         setTimeout(() => {
           setIsLoading(false);
-        }, 500);
+        }, 50);
       }, []);
     
-    if (isLoading) return (
-        <div>
-                <div className='h-screen bg-blue-100'>
-                </div>
-        </div>
-    )
   return (
-    <div className="bg-blue-100 pt-10 xl:px-40">
+    <div className="bg-blue-100 pt-10 xl:px-40 relative">
     <div className="w-5/6 md:w-full md:px-16 mx-auto">
         <div className="flex flex-row justify-center">
         <h1 className="text-center xl:hidden font-semibold text-2xl mr-5 mb-5">{product.title}</h1>
@@ -110,6 +104,7 @@ export default function ProductDisplay({product, products}) {
 
     </div>
     <ItemViewer name={"Continue exploring"} products={products} search={false}/>
+    <div className='absolute top-0 left-0 w-full h-screen bg-blue-100' style={{visibility: (isLoading) ? '' :'hidden'}}></div>
     </div>
   )
 }
