@@ -20,7 +20,7 @@ export default function ProductDisplay({product, products}) {
     useEffect(() => {
         setTimeout(() => {
           setIsLoading(false);
-        }, 50);
+        }, 100);
       }, []);
     
     if (isLoading) return (
